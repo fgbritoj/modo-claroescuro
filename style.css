@@ -1,3 +1,13 @@
+:root {
+  --primary-color: #e21;
+  --primary-color-dark: #900;
+  --bg1: #f7f7f7;
+  --bg2: #fff;
+  --text1: #000;
+  --text2: #00000033;
+  --onda: url("./img/onda-clara.svg");
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0px;
@@ -5,7 +15,8 @@ body {
   gap: 60px;
   justify-items: center;
   margin-top: 60px;
-  background-color: #f7f7f7;
+  background-color: var(--bg1);
+  color: var(--text1);
 }
 
 img {
@@ -50,16 +61,16 @@ p {
 
 .menu a {
   display: block;
-  background: #ffffff;
+  background: var(--bg2);
   padding: 1rem 2rem;
   border-radius: 4px;
-  color: #000000;
+  color: var(--text);
   text-transform: uppercase;
-  border: 2px solid #fff;
+  border: 2px solid var(--bg2);
 }
 
 .menu a:hover {
-  border-color: #e21;
+  border-color: var(--primary-color);
 }
 
 .conteudo {
@@ -69,7 +80,7 @@ p {
 }
 
 .introducao {
-  background: #fff;
+  background: var(--bg2);
   padding: 40px;
   text-align: right;
   position: relative;
@@ -87,7 +98,7 @@ p {
   content: "";
   width: 60px;
   height: 4px;
-  background: #e21;
+  background: var(--primary-color);
   position: absolute;
   top: 30px;
   right: -30px;
@@ -99,30 +110,30 @@ p {
 }
 
 .botao {
-  background: #e21;
-  color: #fff;
+  background: var(--primary-color);
+  color: var(--bg2);
   padding: 1rem 2rem;
   border-radius: 4px;
   text-transform: uppercase;
 }
 
 .botao:hover {
-  background: #900;
+  background: var(--primary-color-dark);
 }
 
 .subtitulo {
   font-size: 4rem;
   text-transform: uppercase;
-  color: rgba(0, 0, 0, 0.2);
+  color: var(--text2);
   text-align: right;
   padding: 40px;
   align-self: center;
-  background-image: url("./img/onda.svg");
+  background: var(--onda);
   /* word-break: break-all; */
 }
 
 .vantagens {
-  background: #fff;
+  background: var(--bg2);
   padding: 40px;
 }
 
@@ -135,11 +146,11 @@ p {
 }
 
 .vantagens-item:nth-child(odd) {
-  background: #f7f7f7;
+  background: var(--bg1);
 }
 
 .vantagens-item:hover {
-  border-color: #e21;
+  border-color: var(--primary-color);
 }
 
 .vantagens-item p {
@@ -147,7 +158,7 @@ p {
 }
 
 .rodape {
-  background: #fff;
+  background: var(--bg2);
   width: 100%;
   text-align: center;
   padding: 40px;
@@ -193,4 +204,24 @@ p {
   p {
     font-size: 1rem;
   }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg1: #111;
+    --bg2: #000;
+    --text1: #fff;
+    --text2: #f7f7f7;
+    --onda: url("./img/onda-escura.svg");
+  }
+
+  .botao {
+    color: var(--text1);
+    font-weight: bold;
+  }
+
+  .menu a {
+    font-weight: bold;
+  }
+
 }
